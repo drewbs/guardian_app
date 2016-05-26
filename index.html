@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Guardian Search</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    <link href='css/skeleton.css' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/my_guardian.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/my_guardian.js"></script>
+  </head>
+  <body >
+    <div class="container">
+      <div class="row">
+        <div class="one-half column">
+          <form>
+            <div class="row seven columns offset-by-two">
+              <h2>Guardian Search</h2>
+            </div>
+            <div class="two columns offset-by-two"><input type="text" id="input_name" placeholder="keyword(s)" onkeypress="return detectPressKey(event);" /><input type="button" id="btnSearch" value="find articles" class="button-primary" onclick="myFunction();" /></div>
+          </form>
+        </div>
+        <div class="three columns offset-by-two">
+          <div class="bubbles"><ul id="results"></ul></div>
+        </div>
+      </div>  
+    </div>
+    <div class="footer">
+      <p><a href="https://github.com/drewbs/guardian_app"><i class="fa fa-github-square"></i></a><p>
+    </div>
+    <script>
+      function detectPressKey(e){
+        e = e || window.event;
+        if (e.keyCode == 13){
+          document.getElementById('btnSearch').click();
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>
